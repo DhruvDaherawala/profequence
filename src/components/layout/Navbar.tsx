@@ -6,6 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 
+
 export function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
 
@@ -23,11 +24,11 @@ export function Navbar() {
         <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
             <div className="container flex h-16 items-center justify-between">
                 <Link href="/" className="flex items-center space-x-2">
-                    <Image 
-                        src="/logo.png" 
-                        alt="Profiquence Academy" 
-                        width={200} 
-                        height={50} 
+                    <Image
+                        src="/logo.png"
+                        alt="Profiquence Academy"
+                        width={200}
+                        height={50}
                         className="h-10 w-auto"
                         priority
                     />
@@ -42,7 +43,9 @@ export function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <Button>Enroll Now</Button>
+                    <Button asChild>
+                        <Link href="/contact">Enroll Now</Link>
+                    </Button>
                 </div>
                 <button
                     className="md:hidden"
@@ -66,7 +69,9 @@ export function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <Button className="w-full">Enroll Now</Button>
+                        <Button className="w-full" asChild>
+                            <Link href="/contact">Enroll Now</Link>
+                        </Button>
                     </div>
                 </div>
             )}
